@@ -13,7 +13,7 @@
     background:whitesmoke;
     text-align: center;
     margin: auto;
-    margin-top: 25%;
+    margin-top: 160px;
 }
 
 .rounded-box p {
@@ -62,3 +62,10 @@ nav ul{
 .navbar-collapse .container {
     margin-left: 0%;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }

@@ -1,3 +1,4 @@
+<div class="sticky">
 <nav class="navbar navbar-dark navbar-expand-md">
     <ul>
         <li class="nav-item dropdown">
@@ -43,3 +44,4 @@
         </div>
     </div>
 </nav>
+</div>

@@ -14,25 +14,24 @@ session_start();
 <body>
     <?php require("navigationbar.php") ?>
     <div id="main">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <div class="rounded-box">
-                <?php 
-                    if($_SESSION["registered"]){
-                        echo "<p>Welcome to Pairs</p>";
-                        echo "<button type=\"button\" class=\"btn btn-success btn-lg\" onclick=\"window.location.href = 'pairs.php';\">Click here to play!</button>";
-                    } else{
-                        echo "<p>You're not using a registered session?</p>";
-                        echo "<button type=\"button\" class=\"btn btn-danger btn-lg\" onclick=\"window.location.href = 'registration.php';\">Register now</button>";
-                    }
-                ?>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <div class="rounded-box">
+                    <?php 
+                        if($_SESSION["registered"]){
+                            echo "<p>Welcome to Pairs</p>";
+                            echo "<button type=\"button\" class=\"btn btn-success btn-lg\" onclick=\"window.location.href = 'pairs.php';\">Click here to play!</button>";
+                        } else{
+                            echo "<p>You're not using a registered session?</p>";
+                            echo "<button type=\"button\" class=\"btn btn-danger btn-lg\" onclick=\"window.location.href = 'registration.php';\">Register now</button>";
+                        }
+                    ?>
+                    </div>
                 </div>
+                <div class="col-3"></div>
             </div>
-            <div class="col-3"></div>
         </div>
-    </div>
-        
     </div>
 </body>
