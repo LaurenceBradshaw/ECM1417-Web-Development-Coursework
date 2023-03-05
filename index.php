@@ -1,5 +1,10 @@
 <?php 
+include("session-close.php");
+register_shutdown_function('logout');
 session_start();
+if(isset($_COOKIE['logged-in']) && $_COOKIE['logged-in'] == true){
+    $_SESSION["registered"] = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,10 +26,10 @@ session_start();
                     <div class="rounded-box">
                     <?php 
                         if($_SESSION["registered"]){
-                            echo "<p>Welcome to Pairs</p>";
+                            echo "<p id=\"title\">Welcome to Pairs</p>";
                             echo "<button type=\"button\" class=\"btn btn-success btn-lg\" onclick=\"window.location.href = 'pairs.php';\">Click here to play!</button>";
                         } else{
-                            echo "<p>You're not using a registered session?</p>";
+                            echo "<p id=\"title\">You're not using a registered session?</p>";
                             echo "<button type=\"button\" class=\"btn btn-danger btn-lg\" onclick=\"window.location.href = 'registration.php';\">Register now</button>";
                         }
                     ?>

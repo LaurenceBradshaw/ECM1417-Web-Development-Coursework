@@ -1,6 +1,7 @@
 <?php 
+include("session-close.php");
+register_shutdown_function('logout');
 session_start();
-$_SESSION["registered"] = false;
 ?>
 
 <!DOCTYPE html>

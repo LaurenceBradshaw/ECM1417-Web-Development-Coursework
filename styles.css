@@ -9,16 +9,21 @@
 }
 
 .rounded-box{
-	border-radius: 25px;
+    border-radius: 10px;
     background:whitesmoke;
     text-align: center;
     margin: auto;
     margin-top: 160px;
 }
 
-.rounded-box p {
+.rounded-box p #title{
     padding-top: 10%;
     font-size: 25px;
+}
+
+.rounded-box p{
+    padding-top: 5%;
+    font-size: 15;
 }
 
 .rounded-box button {
@@ -68,4 +73,58 @@ nav ul{
     top: 0;
     width: 100%;
     z-index: 999;
-  }
+}
+
+.reg-img {
+    display: inline-block;
+    overflow: hidden;
+    width: 250;
+    height: 250px;
+    border-radius: 10%;
+    margin-top: 5%
+}
+
+.input-group ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.remove-list-style{
+    list-style-type: none;
+}
+
+.remove-padding{
+    padding: 0px;
+}
+
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.image1 {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    z-index: 1;
+}
+.image2 {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    z-index: 2;
+}
+
+.image3 {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    z-index: 3;
+}
+
+.image-behind {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
