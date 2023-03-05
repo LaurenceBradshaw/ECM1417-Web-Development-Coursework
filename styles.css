@@ -48,8 +48,12 @@
     display: inline-block;
     border-radius: 50%;
     overflow: hidden;
-    width: 30;
+    width: 30px;
     height: 30px;
+}
+
+.circle {
+    border-radius: 50%;
 }
 
 .circle-image img{
@@ -78,7 +82,7 @@ nav ul{
 .reg-img {
     display: inline-block;
     overflow: hidden;
-    width: 250;
+    width: 250px;
     height: 250px;
     border-radius: 10%;
     margin-top: 5%
@@ -104,22 +108,60 @@ nav ul{
 }
 .image1 {
     position: absolute;
+    right: 0;
+    left: 0;
     top: 0;
-    left: 20%;
     z-index: 1;
+    margin-left:auto;
+    margin-right: auto;
 }
 .image2 {
     position: absolute;
+    right: 0;
+    left: 0;
     top: 0;
-    left: 20%;
     z-index: 2;
+    margin-left:auto;
+    margin-right: auto;
 }
 
 .image3 {
     position: absolute;
+    right: 0;
+    left: 0;
     top: 0;
-    left: 20%;
     z-index: 3;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.image1small {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 30px !important;
+    height:30px !important;
+    margin-right: auto;
+}
+.image2small {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    width: 30px !important;
+    height:30px !important;
+    margin-right: auto;
+}
+
+.image3small {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    width: 30px !important;
+    height:30px !important;
+    margin-right: auto;
 }
 
 .image-behind {

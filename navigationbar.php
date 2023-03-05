@@ -4,7 +4,16 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle navbar-brand" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="circle-image">
-                <img src="../blank.jpg"/>
+                <?php
+                    if($_SESSION['registered'] && isset($_COOKIE['body']) && isset($_COOKIE['eyes']) && isset($_COOKIE['mouth'])){
+                        echo "<img src=\"../res/body". $_COOKIE['body'] .".png\" class=\"circle image1small\"/>";
+                        echo "<img src=\"../res/eyes". $_COOKIE['eyes'] .".png\" class=\"image2small circle \"/>";
+                        echo "<img src=\"../res/mouth". $_COOKIE['mouth'] .".png\" class=\"image3small circle \"/>";
+                    }
+                    else{
+                        echo "<img src=\"../blank.jpg\"/>";
+                    }
+                ?>
             </span>
           </a>
           <ul class="dropdown-menu">

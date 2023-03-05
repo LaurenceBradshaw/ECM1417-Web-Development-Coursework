@@ -57,12 +57,12 @@ document.getElementById("mouthSelect").onchange = function(){
 };
 
 var redraw = function(){
-    var innerString = "<div>";
+    var innerString = "<img src=\"../blank.jpg\" class=\"reg-img image-behind\"/>";
     emojiElements.forEach(element => {
         if(element !== null){
             innerString += element;
         }
     });
-    myDiv.innerHTML = innerString + "</div>";
+    myDiv.innerHTML = innerString;
 }
   

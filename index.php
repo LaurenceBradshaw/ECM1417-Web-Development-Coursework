@@ -1,6 +1,5 @@
 <?php 
 include("session-close.php");
-register_shutdown_function('logout');
 session_start();
 if(isset($_COOKIE['logged-in']) && $_COOKIE['logged-in'] == true){
     $_SESSION["registered"] = true;

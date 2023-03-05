@@ -1,8 +1,6 @@
 <?php 
 include("session-close.php");
-register_shutdown_function('logout');
 session_start();
-$_SESSION["registered"] = true;
 ?>
 
 <!DOCTYPE html>
@@ -21,14 +19,16 @@ $_SESSION["registered"] = true;
                 <div class="col-2"></div>
                 <div class="col-8">
                     <div class="rounded-box">
-                        <form action="submit-register.php">
+                        <form method="post" action="submit-register.php">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                             <div class="container mb-3">
                                 <div class="row">
-                                    <div class="col parent" id="pfpCol"></div>
+                                    <div class="col parent" id="pfpCol">
+                                        <img src="../blank.jpg" class="reg-img image-behind"/>
+                                    </div>
                                     <div class="col">
                                         <ul class="remove-list-style remove-padding">
                                         <li>
