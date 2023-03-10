@@ -11,30 +11,39 @@ function changeSize(cards){
 }
 
 function createCards(){
-    // Find a random number generator and create pairs of cards with random features
+    // Define Variables
     let currentCardNum = 0;
     let usedCombo = [];
     let body;
     let eyes;
     let mouth;
+    // Generate a combination of features that have not been generated before
     for (let i = 0; i < numPairs; i++){
         do {
-            body = getRandomInt(3) + 1; //TODO Find if the combo of body eyes and mouth have been used?
+            body = getRandomInt(3) + 1;
             eyes = getRandomInt(3) + 1;
             mouth = getRandomInt(2) + 1;
         } while (usedCombo.includes([body, eyes, mouth]));
+        // Add this generation to the list of used generations
         usedCombo.append([body, eyes, mouth]);
+
+        // Create a pair of cards
         let card1 = new Card(currentCardNum, body, eyes, mouth);
         let card2 = new Card(currentCardNum + 1, body, eyes, mouth);
 
+        // Add the cards to the list of cards
         currentCardNum += 2;
         cards.push(card1);
         cards.push(card2);
     }
+    // Shuffle the cards into a random order
+    shuffle(cards);
 }
 
-function cardClick(num){
-    clickedCard = cards[num];
+function cardClick(num) {
+    // Find the clicked card
+    clickedCard = cards[num]; // TODO: because of shuffle, card num no longer represents the index in the card array the card is at
+    // Check its not flipped already
     if (clickedCard.flipped === false) {
         clickedCard.show();
     }
@@ -60,6 +69,8 @@ function render(){
 function evalEqual() {
     matching = true;
     let i = 1;
+    // Iterate over the list of selected cards and check if they are all equal
+    // This loop will break upon finding the first non-matching card
     while (i < selected.length) {
         if (!(selected[i].isEqual(selected[0].turnedString))) {
             matching = false;
@@ -134,6 +145,15 @@ function getHeight() {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
+}
+
+function shuffle(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
 
 createCards();
