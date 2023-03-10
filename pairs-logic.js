@@ -34,8 +34,10 @@ function createCards(){
 }
 
 function cardClick(num){
-    clickedCard = cards.filter(c => c.num === num);
-    clickedCard.show();
+    clickedCard = cards[num];
+    if (clickedCard.flipped === false) {
+        clickedCard.show();
+    }
 }
 
 function render(){
@@ -72,7 +74,7 @@ function evalEqual() {
         // Keep shown and add score
         score += 1;
     } else {
-        selected.forEach(function (c) { c.flipped = false; })
+        selected.forEach(function (c) { c.flipped === false; })
         // Turn over again
     }
 }
