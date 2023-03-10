@@ -47,23 +47,42 @@ function cardClick(num) {
     if (clickedCard.flipped === false) {
         clickedCard.show();
     }
+    // Check if the game should end
+    let i = 0;
+    end = true;
+    while (i < cards.length) {
+        if (cards[i].flipped === false) {
+            end = false;
+            break;
+        }
+    }
+    if (end) {
+        gameEnd();
+    }
 }
 
 function render(){
     // Design a way of rendering cards given the dimentions of the window?
     //width = getWidth();
     for(let i = 0; i < numPairs * 2; i++){
-        let newDiv = document.createElement('button');
-        newDiv.className = "parent cardparent unstyled-button";
+        let newButton = document.createElement('button');
+        newButton.className = "parent cardparent unstyled-button";
         if (cards[i].flipped) {
-            newDiv.innerHTML = cards[i].turnedString;
+            newButton.innerHTML = cards[i].turnedString;
         }
         else {
-            newDiv.innerHTML = cards[i].unTurnedString;
+            newButton.innerHTML = cards[i].unTurnedString;
         }
-        newDiv.onclick = cardClick(i);
-        gameBoard.append(newDiv);
+        newButton.onclick = cardClick(i);
+        newButton.addEventListener('click', function () {
+            cardClick(i);
+        });
+        gameBoard.append(newButton);
     }
+}
+
+function gameEnd() {
+    
 }
 
 function evalEqual() {
