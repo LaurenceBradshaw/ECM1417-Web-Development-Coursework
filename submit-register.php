@@ -1,11 +1,12 @@
 <?php
 $username = $_POST['username'];
-$body = $_POST['body'];
+$body = $_POST['skin'];
 $mouth = $_POST['mouth'];
 $eyes = $_POST['eyes'];
+$_SESSION["registered"] = true;
 
 setcookie('username', $username, time() + 10 * 365 * 24 * 60 * 60, '/');
-setcookie('body', $body, time() + 10 * 365 * 24 * 60 * 60, '/');
+setcookie('skin', $body, time() + 10 * 365 * 24 * 60 * 60, '/');
 setcookie('mouth', $mouth, time() + 10 * 365 * 24 * 60 * 60, '/');
 setcookie('logged-in', true, time() + 60 * 60, '/');
 setcookie('eyes', $eyes, time() + 10 * 365 * 24 * 60 * 60, '/');

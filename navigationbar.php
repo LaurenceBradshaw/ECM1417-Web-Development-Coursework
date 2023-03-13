@@ -1,3 +1,5 @@
+<link href="../css/navigation.css" rel="stylesheet"/>
+
 <div class="sticky">
 <nav class="navbar navbar-dark navbar-expand-md">
     <ul>
@@ -5,13 +7,13 @@
           <a class="nav-link dropdown-toggle navbar-brand" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="circle-image">
                 <?php
-                    if($_SESSION['registered'] && isset($_COOKIE['body']) && isset($_COOKIE['eyes']) && isset($_COOKIE['mouth'])){
-                        echo "<img src=\"../res/body". $_COOKIE['body'] .".png\" class=\"circle image1small\"/>";
-                        echo "<img src=\"../res/eyes". $_COOKIE['eyes'] .".png\" class=\"image2small circle \"/>";
-                        echo "<img src=\"../res/mouth". $_COOKIE['mouth'] .".png\" class=\"image3small circle \"/>";
+                    if($_SESSION['registered'] && isset($_COOKIE['skin']) && isset($_COOKIE['eyes']) && isset($_COOKIE['mouth'])){
+                        echo "<img src=\"../res/skin/". $_COOKIE['skin'] .".png\" class=\"circle image1small\"/>";
+                        echo "<img src=\"../res/eyes/". $_COOKIE['eyes'] .".png\" class=\"image2small circle \"/>";
+                        echo "<img src=\"../res/mouth/". $_COOKIE['mouth'] .".png\" class=\"image3small circle \"/>";
                     }
                     else{
-                        echo "<img src=\"../blank.jpg\"/>";
+                        echo "<img src=\"../res/blank.jpg\"/>";
                     }
                 ?>
             </span>
