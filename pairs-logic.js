@@ -1,5 +1,6 @@
 var cards = [];
 var selected = [];
+var selected = [];
 var numPairs = 3;
 var score = 0;
 var numToMatch = 2;
@@ -36,6 +37,8 @@ function createCards(){
     }
     // Shuffle the cards into a random order
     shuffle(cards);
+    // Shuffle the cards into a random order
+    shuffle(cards);
 }
 
 function cardClick(num){
@@ -62,7 +65,7 @@ function cardClick(num){
 }
 
 function render(){
-    // Design a way of rendering cards given the dimentions of the window
+    // Design a way of rendering cards given the dimentions of the window?
     //width = getWidth();
     gameBoard.innerHTML = "";
     for(let i = 0; i < numPairs * 2; i++){
@@ -173,6 +176,15 @@ function getHeight() {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
+}
+
+function shuffle(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
 
 function shuffle(array) {
