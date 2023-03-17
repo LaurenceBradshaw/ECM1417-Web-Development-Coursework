@@ -22,7 +22,7 @@ session_start();
                         <form method="post" action="submit-register.php">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="username">
                             </div>
                             <div class="container mb-3">
                                 <div class="row">
@@ -68,7 +68,7 @@ session_start();
                                     </div>
                                 </div>
                             </div>
-                            <input type="submit" value="Register">
+                            <input class="reg-button" type="submit" value="Register" id="submit-button">
                         </form>
                     </div>
                 </div>

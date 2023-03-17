@@ -164,3 +164,14 @@
     padding: 0;
     background: none;
   }
+
+.invalid-chars {
+    color: red;
+    text-align: left;
+    padding-top: 0!important;
+    margin-left: 10px;
+}
+
+.reg-button {
+    margin-bottom: 5%;
+}

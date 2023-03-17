@@ -27,16 +27,12 @@ function createCards(){
         // Add this generation to the list of used generations
         usedCombo.push([skin, eyes, mouth]);
         
-        // Create a pair of cards
-        let card1 = new Card(skin, eyes, mouth);
-        let card2 = new Card(skin, eyes, mouth);
-
-        // Add the cards to the list of cards
-        cards.push(card1);
-        cards.push(card2);
+        // Create the number of cards to match and add them to the list of cards
+        for(i = 0; i < numToMatch; i++){
+            let c = new Card(skin, eyes, mouth);
+            cards.push(c);
+        }
     }
-    // Shuffle the cards into a random order
-    shuffle(cards);
     // Shuffle the cards into a random order
     shuffle(cards);
 }
@@ -65,8 +61,6 @@ function cardClick(num){
 }
 
 function render(){
-    // Design a way of rendering cards given the dimentions of the window?
-    //width = getWidth();
     gameBoard.innerHTML = "";
     for(let i = 0; i < numPairs * 2; i++){
         let newButton = document.createElement('button');
