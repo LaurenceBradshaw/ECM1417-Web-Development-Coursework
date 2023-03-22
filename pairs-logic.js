@@ -5,8 +5,12 @@ var numPairs = 3;
 var score = 0;
 var numToMatch = 2;
 var gameBoard = document.getElementById("gameBoard");
+var leaderboard;
+var level = 1;
 
-
+// TODO: Make timer
+// TODO: Total score vs level score
+// TODO: Make different levels with changing numToMatch (level 1: 3 pairs of 2) (level 2: 3 pairs of 3) (level 3: 5 pairs of 2) etc increasing total card count
 function changeSize(cards){
     numPairs = cards;
 }
@@ -28,7 +32,7 @@ function createCards(){
         usedCombo.push([skin, eyes, mouth]);
         
         // Create the number of cards to match and add them to the list of cards
-        for(i = 0; i < numToMatch; i++){
+        for(let j = 0; j < numToMatch; j++){
             let c = new Card(skin, eyes, mouth);
             cards.push(c);
         }
@@ -38,7 +42,6 @@ function createCards(){
 }
 
 function cardClick(num){
-    console.log(num);
     // Find the clicked card
     clickedCard = cards[num];
     // Check its not flipped already
@@ -49,7 +52,7 @@ function cardClick(num){
     let i = 0;
     end = true;
     while (i < cards.length) {
-        if (cards[i].flipped === false) {
+        if (cards[i].matched === false) {
             end = false;
             break;
         }
@@ -61,6 +64,7 @@ function cardClick(num){
 }
 
 function render(){
+    //TODO: Check if current score exceeds the players max and then set to gold background if so
     gameBoard.innerHTML = "";
     for(let i = 0; i < numPairs * 2; i++){
         let newButton = document.createElement('button');
@@ -79,8 +83,44 @@ function render(){
 }
 
 function gameEnd() {
-    
+    // Add the score to the data store if it is better
+    leaderboard = getLeaderboard();
+    updateLeaderboard();
 }
+
+function getLeaderboard(){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if(xhr.status == 200 && xhr.readyState == 4){
+            console.log("get");
+            console.log(xhr.readyState);
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+        }
+    }
+    xhr.open('GET', 'data/leaderboard.txt', false);
+    xhr.setRequestHeader('Cache-Control', 'no-cache, no-store, max-age=0');
+    xhr.send();
+
+    return xhr.responseText;
+}
+
+function updateLeaderboard() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if(xhr.status == 200 && xhr.readyState == 4){
+            console.log("update");
+            console.log(xhr.readyState);
+            console.log(xhr.status);
+        }
+    }
+    data = new FormData();
+    data.append("score", score);
+    data.append("level", level);
+    xhr.open('POST', "leaderboardupdater.php", false);
+    xhr.send(data);
+}
+
 
 function evalEqual(){
     matching = true;
@@ -103,14 +143,6 @@ function evalEqual(){
         selected.forEach(function (c) { c.matched = true; });
         // selected = [];
     } 
-    // else {
-    //     sleep(1000).then(() => {  
-    //         selected.forEach(function (c) { c.flipped = false; });
-    //         selected = [];
-    //         render();
-    //         });  
-    //     // Turn over again
-    // }
 }
 
 class Card {
@@ -180,15 +212,6 @@ function shuffle(array) {
         array[j] = temp;
     }
 }
-
-function shuffle(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-} 
 
 function arrayAlreadyHasArray(arr, testArr){
     for(var i = 0; i<arr.length; i++){

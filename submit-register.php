@@ -10,6 +10,7 @@ setcookie('skin', $body, time() + 10 * 365 * 24 * 60 * 60, '/');
 setcookie('mouth', $mouth, time() + 10 * 365 * 24 * 60 * 60, '/');
 setcookie('logged-in', true, time() + 60 * 60, '/');
 setcookie('eyes', $eyes, time() + 10 * 365 * 24 * 60 * 60, '/');
+setcookie('max_score', -1, time() + 10 * 365 * 24 * 60 * 60, '/');
 
 
 header('Location: index.php');
