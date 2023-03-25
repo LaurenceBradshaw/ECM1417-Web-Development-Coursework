@@ -14,11 +14,15 @@ session_start();
     <body>
     <?php require("navigationbar.php")?>
     <div id="main">
+        <div class="bgimg"></div>
         <div class="container text-center">
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10">
-                    <div class="rounded-box">
+                    <div class="rounded-box info-area">
+                        <p id="info"></p>
+                    </div>
+                    <div class="rounded-box play-area">
                         <div id="gameBoard">
 
                         </div>

@@ -15,4 +15,7 @@ session_start();
 </head>
 <body>
     <?php require("navigationbar.php")?>
+    <div id="main">
+        <div class="bgimg"></div>
+    </div>
 </body>

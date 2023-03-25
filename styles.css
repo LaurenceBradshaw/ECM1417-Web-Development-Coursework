@@ -13,7 +13,7 @@
 
 .rounded-box p{
     padding-top: 5%;
-    font-size: 15;
+    font-size: 15px;
 }
 
 .rounded-box button {
@@ -24,14 +24,21 @@
 #main {
     width: 100%;
     height: 100vh;
+    position: absolute;
+  }
+
+.bgimg {
+    width: 100%;
+    height: 100vh;
     background-image: url('../res/arcade-unsplash.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-position: center;
     background-size: cover;
-    position: absolute;
+    position: fixed;
     margin-left: auto;
     margin-right: auto;
-  }
+    z-index: -1;
+}
 
 .circle-image{
     display: inline-block;
@@ -147,13 +154,13 @@
     display: inline-block;
     overflow: hidden;
     width: 150px;
-    height: 225px;
+    height: 150px;
     border-radius: 10%;
     margin-top: 5%;
 }
 
 .cardparent {
-    height: 250px!important;
+    height: 175px!important;
     width: 175px!important;
     margin-top: 0!important;
     margin-bottom: 0!important;
@@ -174,4 +181,25 @@
 
 .reg-button {
     margin-bottom: 5%;
+}
+
+.play-area {
+    background: grey!important;
+    box-shadow: 5px 5px;
+    margin-top: 10px!important;
+}
+
+.play-area-gold {
+    background: gold!important;
+    box-shadow: 5px 5px;
+    margin-top: 10px!important;
+}
+
+.info-area {
+    background: grey!important;
+    box-shadow: 5px 5px;
+}
+
+.info-area p {
+    padding-top: 0px!important;
 }

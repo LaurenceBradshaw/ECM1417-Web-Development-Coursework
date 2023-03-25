@@ -18,6 +18,7 @@ if(isset($_COOKIE['logged-in']) && $_COOKIE['logged-in'] == true){
 <body>
     <?php require("navigationbar.php") ?>
     <div id="main">
+        <div class="bgimg"></div>
         <div class="container text-center">
             <div class="row">
                 <div class="col-3"></div>

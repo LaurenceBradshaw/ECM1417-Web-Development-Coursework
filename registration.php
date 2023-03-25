@@ -14,6 +14,7 @@ session_start();
     <body>
     <?php require("navigationbar.php")?>
     <div id="main">
+        <div class="bgimg"></div>
         <div class="container text-center">
             <div class="row">
                 <div class="col-2"></div>
