@@ -1,6 +1,6 @@
 .rounded-box{
     border-radius: 10px;
-    background:whitesmoke;
+    background:grey;
     text-align: center;
     margin: auto;
     margin-top: 160px;
@@ -202,4 +202,65 @@
 
 .info-area p {
     padding-top: 0px!important;
+}
+
+.card {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+    display: inline-block;
+    background-color: darkgray;
+}
+
+.card.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card-face {
+    position: absolute;
+    line-height: 260px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    backface-visibility: hidden;
+}
+
+.card-face-front {
+    background-color: darkgray;
+}
+  
+.card-face-back {
+    transform: rotateY(180deg);
+    cursor: auto;
+    width:150px;
+    height:150px;
+}
+
+.emoji > img{
+    position: relative;
+    vertical-align: unset;
+}
+
+.emoji > img ~ img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.card div img{
+    width: 150px;
+    height:150px;
+    border-radius: 5%;
+}
+
+.card div {
+    border-radius: 5%;
 }

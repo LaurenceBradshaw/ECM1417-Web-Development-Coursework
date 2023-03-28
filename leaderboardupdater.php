@@ -19,7 +19,7 @@ while(!feof($reading)) {
         if($data[0] == $_COOKIE['username']){
             $exists = true;
         }
-        if($exists & (int)$data[4] <= (int)$_POST['score']){
+        if($data[0] == $_COOKIE['username'] & (int)$data[4] <= (int)$_POST['score']){
             $writing = $writing . $data[0] . "-" . $data[1] . "-" . $data[2] . "-" . $data[3] . "-" . $_POST['score'] . "-" . $_POST['time']  . "\n";
         } else {
             $writing = $writing . $line;

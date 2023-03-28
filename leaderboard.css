@@ -1,0 +1,54 @@
+.drop-down {
+    width: 50%;
+    margin-right:auto;
+    margin-left: auto;
+}
+
+#leaderboard-area{
+    display: grid;
+    border-top: 10px solid grey;
+}
+
+.grey {
+    background: grey!important;
+    box-shadow: 5px 5px;
+}
+
+.leaderboard{
+    border-spacing: 2px;
+    border: white solid;
+}
+
+.leaderboard tr th {
+    background-color: blue;
+    border-spacing: 2px;
+    border: white solid;
+    color: white;
+}
+
+
+.leaderboard tr td {
+    border-spacing: 2px;
+    border: white solid;
+}
+
+.leaderboard tr {
+    border-spacing: 2px;
+    border: white solid;
+}
+
+.emoji img{
+    width: 35px;
+    height: 35px;
+}
+
+.emoji{
+    position: absolute;
+}
+
+.emoji-wrapper {
+    width: 35px;
+    height: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
